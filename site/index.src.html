@@ -1,13 +1,13 @@
 <title>R Hall &amp; Son</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&family=Barlow:wght@500;600&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500&display=swap">
 <style>
 :root{
   --mortar:#EEEEEA; --mortar-2:#E4E3DD; --paper:#F7F7F4;
   --slate:#1D2125; --slate-2:#2A3035; --steel:#5A636A;
   --grit:#B59E74; --grit-soft:#D9CCB2;
-  --kiln:#D2561E; --kiln-ink:#B4461A; --on-kiln:#FFFFFF;
+  --kiln:#F46425; --kiln-ink:#B8461A; --on-kiln:#1D2125;
   --bg:var(--mortar); --surface:var(--paper); --ink:var(--slate); --muted:var(--steel);
   --rule:color-mix(in srgb, var(--slate) 16%, transparent);
   --rule-strong:color-mix(in srgb, var(--slate) 70%, transparent);
@@ -15,6 +15,8 @@
   --display:"Archivo", "Arial Black", "Helvetica Neue", Arial, sans-serif;
   --body:"Archivo", "Helvetica Neue", Arial, sans-serif;
   --serif:"Newsreader", Georgia, "Times New Roman", serif;
+  --logo:"Barlow", "DIN Alternate", "Helvetica Neue", Arial, sans-serif;
+  --logo-orange:#F46425;
   --mono:"IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
   --wrap:1240px; --gutter:clamp(16px, 4vw, 40px);
 }
@@ -23,7 +25,7 @@
     color-scheme:dark;
     --bg:#15181B; --surface:#1C2024; --ink:#ECEAE4; --muted:#A3A9AD;
     --mortar-2:#22272B; --grit-soft:#4A4234;
-    --kiln:#EC7038; --kiln-ink:#F08A58; --on-kiln:#15181B;
+    --kiln:#F46425; --kiln-ink:#F58A5A; --on-kiln:#15181B;
     --rule:color-mix(in srgb, #ECEAE4 14%, transparent);
     --rule-strong:color-mix(in srgb, #ECEAE4 60%, transparent);
   }
@@ -32,7 +34,7 @@
   color-scheme:dark;
   --bg:#15181B; --surface:#1C2024; --ink:#ECEAE4; --muted:#A3A9AD;
   --mortar-2:#22272B; --grit-soft:#4A4234;
-  --kiln:#EC7038; --kiln-ink:#F08A58; --on-kiln:#15181B;
+  --kiln:#F46425; --kiln-ink:#F58A5A; --on-kiln:#15181B;
   --rule:color-mix(in srgb, #ECEAE4 14%, transparent);
   --rule-strong:color-mix(in srgb, #ECEAE4 60%, transparent);
 }
@@ -51,13 +53,13 @@ h2{font-size:clamp(34px,5.4vw,68px)}
 h3{font-size:clamp(19px,1.8vw,22px);line-height:1.1}
 p{margin:0;text-wrap:pretty}
 .wrap>*,.head>*,.svc>*,.about-grid>*,.tb>*,.kit>*,.rev-grid>*,.d2r>*{min-width:0}
-@media (max-width:560px){h1,h2,h3,.brand b,.lockup b,.cell .big,.domain-big,.proof b{font-stretch:108%}.hero h1{font-size:clamp(34px,11vw,52px)}h2{font-size:clamp(28px,8.4vw,40px)}}
+@media (max-width:560px){h1,h2,h3,.cell .big,.domain-big,.proof b{font-stretch:108%}.hero h1{font-size:clamp(34px,11vw,52px)}h2{font-size:clamp(28px,8.4vw,40px)}}
 .lede{font-size:clamp(18px,1.6vw,20px);color:var(--muted);max-width:58ch}
 
 /* Buttons */
 .btn{display:inline-flex;align-items:center;gap:10px;font:700 15px/1 var(--body);font-stretch:112%;letter-spacing:.02em;text-transform:uppercase;text-decoration:none;padding:16px 22px;border:2px solid transparent;cursor:pointer;transition:background .15s,color .15s,border-color .15s}
 .btn-kiln{background:var(--kiln);color:var(--on-kiln)}
-.btn-kiln:hover{background:var(--kiln-ink)}
+.btn-kiln:hover{background:color-mix(in srgb, var(--kiln) 88%, #000)}
 .btn-line{border-color:currentColor;background:transparent;color:inherit}
 .btn-line:hover{background:color-mix(in srgb, currentColor 12%, transparent)}
 .btn svg{width:18px;height:18px}
@@ -71,9 +73,9 @@ p{margin:0;text-wrap:pretty}
 header.site{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:color-mix(in srgb, var(--bg) 92%, transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--rule)}
 header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-block:12px}
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
-.brand svg{width:40px;height:40px;flex:none}
-.brand b{display:block;font:800 17px/1 var(--display);font-stretch:125%;letter-spacing:.01em;text-transform:uppercase}
-.brand small{display:block;font:500 10px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:5px}
+.brand svg{width:36px;height:40px;flex:none}
+.brand b{display:block;font:600 21px/1 var(--logo)}
+.brand small{display:block;font:500 13px/1 var(--logo);color:var(--muted);margin-top:3px}
 nav.links{display:flex;gap:26px;align-items:center}
 nav.links a{text-decoration:none;font-weight:600;font-size:15px;color:var(--ink);opacity:.8}
 nav.links a:hover{opacity:1;color:var(--kiln-ink)}
@@ -161,12 +163,12 @@ section{padding-block:clamp(64px,9vw,120px)}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
 .chip{all:unset;cursor:pointer;font:500 13px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;padding:10px 14px;border:1px solid rgba(236,234,228,.28);color:#D9D6CE}
 .chip:hover{border-color:#ECEAE4;color:#fff}
-.chip[aria-pressed="true"]{background:#EC7038;border-color:#EC7038;color:#15181B}
-.chip:focus-visible{outline:2px solid #EC7038;outline-offset:2px}
+.chip[aria-pressed="true"]{background:#F46425;border-color:#F46425;color:#15181B}
+.chip:focus-visible{outline:2px solid #F46425;outline-offset:2px}
 .chip small{opacity:.6;margin-left:6px;font-size:11px}
 .grid{columns:4 260px;column-gap:12px}
 .grid button{all:unset;cursor:zoom-in;display:block;break-inside:avoid;margin-bottom:12px;position:relative;width:100%;background:#2A3035}
-.grid button:focus-visible{outline:2px solid #EC7038;outline-offset:2px}
+.grid button:focus-visible{outline:2px solid #F46425;outline-offset:2px}
 .grid img{width:100%;height:auto}
 .grid .cap{position:absolute;left:0;right:0;bottom:0;padding:28px 12px 10px;background:linear-gradient(0deg,rgba(15,17,19,.85),transparent);font:500 12px/1.3 var(--mono);letter-spacing:.04em;color:#F4F2EC;opacity:0;transition:opacity .2s}
 .grid button:hover .cap,.grid button:focus-visible .cap{opacity:1}
@@ -181,7 +183,7 @@ section{padding-block:clamp(64px,9vw,120px)}
 .lb-bot{display:flex;justify-content:center;gap:10px;padding-top:12px}
 .lb button{all:unset;cursor:pointer;color:#fff;border:1px solid rgba(255,255,255,.3);padding:10px 16px;font:500 13px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase}
 .lb button:hover{border-color:#fff}
-.lb button:focus-visible{outline:2px solid #EC7038}
+.lb button:focus-visible{outline:2px solid #F46425}
 
 /* Video */
 .vids{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:clamp(40px,6vw,72px);padding-top:32px;border-top:1px solid rgba(236,234,228,.14)}
@@ -243,10 +245,10 @@ section{padding-block:clamp(64px,9vw,120px)}
 .cell-row .cell+.cell{border-left:1px solid var(--rule-strong)}
 .copy{all:unset;cursor:pointer;font:500 11px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--kiln-ink);justify-self:start;border-bottom:1px solid currentColor;padding-bottom:2px}
 .copy:focus-visible{outline:2px solid var(--kiln);outline-offset:3px}
-.cell.brandcell{background:var(--ink);color:var(--bg);grid-template-columns:auto 1fr;align-items:center;gap:14px}
-.cell.brandcell svg{width:46px;height:46px}
-.cell.brandcell b{font:800 18px/1 var(--display);font-stretch:125%;text-transform:uppercase}
-.cell.brandcell small{display:block;font:500 10px/1.4 var(--mono);letter-spacing:.12em;text-transform:uppercase;opacity:.7;margin-top:4px}
+.cell.brandcell{background:#000;color:#fff;grid-template-columns:auto 1fr;align-items:center;gap:14px}
+.cell.brandcell svg{width:42px;height:46px}
+.cell.brandcell b{font:600 22px/1 var(--logo)}
+.cell.brandcell small{display:block;font:500 14px/1.2 var(--logo);margin-top:4px}
 @media (max-width:860px){.contact .tb{grid-template-columns:1fr}.tb-form{border-right:0;border-bottom:2px solid var(--ink)}}
 @media (max-width:520px){.fields{grid-template-columns:1fr}}
 
@@ -267,16 +269,20 @@ footer.site .wrap{display:flex;justify-content:space-between;gap:12px 24px;flex-
 .k-type{grid-column:span 5}
 .k-domain{grid-column:span 7}
 .k-apps{grid-column:span 12}
-.lockups{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:10px}
+.lockups{display:grid;grid-template-columns:1fr 1.4fr 1fr;gap:10px}
 .lockups > div{aspect-ratio:1.2;display:grid;place-items:center;padding:16px}
 .lk-a{background:#EEEEEA;color:#1D2125}
-.lk-b{background:#1D2125;color:#EEEEEA}
-.lk-c{background:#D2561E;color:#fff}
+.lk-b{background:#000;color:#fff}
+.lk-c{background:#F46425;color:#fff}
 .lockup{display:flex;align-items:center;gap:12px}
-.lockup svg{width:clamp(40px,5vw,58px);height:auto;flex:none}
-.lockup b{display:block;font:800 clamp(16px,2vw,24px)/1 var(--display);font-stretch:125%;text-transform:uppercase}
-.lockup small{display:block;font:500 9px/1.3 var(--mono);letter-spacing:.14em;text-transform:uppercase;opacity:.75;margin-top:6px}
-.lk-b svg,.lk-c svg{width:clamp(44px,6vw,72px)}
+.lockup svg{width:clamp(34px,4.4vw,50px);height:auto;flex:none}
+.lockup b{display:block;font:600 clamp(20px,2.3vw,28px)/1 var(--logo)}
+.lockup small{display:block;font:500 clamp(13px,1.4vw,16px)/1.2 var(--logo);margin-top:4px}
+.stack{display:grid;justify-items:center;text-align:center;gap:2px}
+.stack svg{width:clamp(44px,5.4vw,64px);height:auto;margin-bottom:10px}
+.stack b{font:600 clamp(17px,1.9vw,22px)/1 var(--logo)}
+.stack small{font:500 clamp(11px,1.2vw,14px)/1.2 var(--logo)}
+.lk-c svg{width:clamp(44px,6vw,72px)}
 .k-why ul{margin:0;padding-left:18px;display:grid;gap:10px;color:var(--muted)}
 .k-why li b{color:var(--ink)}
 .swatches{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
@@ -289,6 +295,7 @@ footer.site .wrap{display:flex;justify-content:space-between;gap:12px 24px;flex-
 .spec .s1{font:800 clamp(34px,5vw,58px)/.9 var(--display);font-stretch:125%;text-transform:uppercase}
 .spec .s2{font:400 17px/1.5 var(--body)}
 .spec .s3{font:italic 400 22px/1.3 var(--serif)}
+.spec .s5{font:600 22px/1.2 var(--logo)}
 .spec .s4{font:400 13px/1.4 var(--mono);letter-spacing:.08em;text-transform:uppercase}
 .spec > div{display:grid;gap:4px;border-top:1px solid var(--rule);padding-top:12px}
 .domain-big{font:800 clamp(22px,2.8vw,32px)/1.05 var(--display);font-stretch:112%;word-break:break-word}
@@ -308,14 +315,13 @@ footer.site .wrap{display:flex;justify-content:space-between;gap:12px 24px;flex-
 .apps{display:grid;grid-template-columns:1.5fr 1fr;gap:16px}
 .apps svg{width:100%;height:auto;display:block}
 @media (max-width:900px){.k-logo,.k-why,.k-type,.k-domain{grid-column:span 12}.apps{grid-template-columns:1fr}}
-@media (max-width:560px){.lockups{grid-template-columns:1fr 1fr}.lk-a{grid-column:1/-1;aspect-ratio:2}}
+@media (max-width:560px){.lockups{grid-template-columns:1fr 1fr}.lk-a{grid-column:1/-1;aspect-ratio:2;order:-1}}
 </style>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
-    <symbol id="mark" viewBox="0 0 64 64">
-      <path fill="currentColor" d="M2 29 32 4l30 25v11L32 15 2 40z"/>
-      <path fill="currentColor" d="M12 37h9v23h-9zM43 37h9v23h-9zM21 45h22v8H21z"/>
+    <symbol id="mark" viewBox="0 0 327 351">
+      <path fill="currentColor" fill-rule="evenodd" d="M0 351V98L163 0l164 98v253zM33 318V118.3L77 91.5V318zM111 185V70.7L163 39l55 33.6V185zM111 219h107v99H111zM251 318V92.7l44 26.8V318z"/>
     </symbol>
     <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"/></symbol>
     <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square" d="M4 12h15M13 6l6 6-6 6"/></symbol>
@@ -327,8 +333,8 @@ footer.site .wrap{display:flex;justify-content:space-between;gap:12px 24px;flex-
 <header class="site">
   <div class="wrap">
     <a class="brand" href="#top" aria-label="R Hall &amp; Son, home">
-      <svg style="color:var(--kiln)"><use href="#mark"/></svg>
-      <span><b>R Hall &amp; Son</b><small>Developments · Sheffield</small></span>
+      <svg style="color:var(--logo-orange)"><use href="#mark"/></svg>
+      <span><b>R.Hall &amp; Son</b><small>Developments Ltd</small></span>
     </a>
     <nav class="links" aria-label="Main">
       <a href="#work">Our work</a>
@@ -514,7 +520,7 @@ footer.site .wrap{display:flex;justify-content:space-between;gap:12px 24px;flex-
             <div class="cell"><span class="mono">Hours on site</span><span class="val">From 8.00am</span></div>
             <div class="cell"><span class="mono">Quotes</span><span class="val">Free, no obligation</span></div>
           </div>
-          <div class="cell brandcell"><svg style="color:#EC7038"><use href="#mark"/></svg><div><b>R Hall &amp; Son</b><small>Developments Ltd · Sheffield</small></div></div>
+          <div class="cell brandcell"><svg style="color:#F46425"><use href="#mark"/></svg><div><b>R.Hall &amp; Son</b><small>Developments Ltd</small></div></div>
         </div>
       </div>
     </div>
@@ -533,30 +539,30 @@ footer.site .wrap{display:flex;justify-content:space-between;gap:12px 24px;flex-
     <div class="intro">
       <span class="mono">Notes for Reece · not part of the live site</span>
       <h2>Brand refresh &amp; domain.</h2>
-      <p class="lede">The current orange-and-black house logo is recognisable, so this keeps the orange and the house-and-H idea and makes it simpler and stronger. The new look is based on the things you actually build with: gritstone, slate and lime mortar.</p>
+      <p class="lede">The logo stays exactly as it is. People already know it from the vans and site boards. What's new is everything around it: a website and colours based on the things you actually build with, like gritstone, slate and lime mortar, with the logo orange as the one bright colour.</p>
     </div>
     <div class="kit">
       <div class="k-logo">
         <span class="label">Logo</span>
         <div class="lockups">
-          <div class="lk-a"><div class="lockup"><svg style="color:#D2561E"><use href="#mark"/></svg><div><b>R Hall &amp; Son</b><small>Developments · Sheffield</small></div></div></div>
-          <div class="lk-b"><svg style="color:#EC7038"><use href="#mark"/></svg></div>
+          <div class="lk-b"><div class="stack"><svg style="color:#F46425"><use href="#mark"/></svg><b>R.Hall &amp; Son</b><small>Developments Ltd</small></div></div>
+          <div class="lk-a"><div class="lockup"><svg style="color:#F46425"><use href="#mark"/></svg><div><b>R.Hall &amp; Son</b><small>Developments Ltd</small></div></div></div>
           <div class="lk-c"><svg style="color:#fff"><use href="#mark"/></svg></div>
         </div>
       </div>
       <div class="k-why">
-        <span class="label">What changed</span>
+        <span class="label">What stays, what's new</span>
         <ul>
-          <li><b>A simpler mark.</b> A roof pitch over an H. It reads at van-sticker size, on a hi-vis back and as a tiny phone icon.</li>
-          <li><b>Orange stays.</b> People already know it from the vans and boards, so it's now the only accent colour.</li>
-          <li><b>Black becomes slate.</b> A softer blue-black that sits better next to stone photography.</li>
-          <li><b>Wide, heavy lettering.</b> It reads like site hoarding and signwriting, not like a tech company.</li>
+          <li><b>Logo unchanged.</b> Same house-and-H mark, same orange, same lettering. It's now drawn as a sharp vector file, so it prints cleanly at any size, from a phone icon to a van door.</li>
+          <li><b>Orange is the one bright colour.</b> Keeping everything else calm makes the logo stand out.</li>
+          <li><b>Slate and stone around it.</b> A soft blue-black and warm stone tones that sit well with photos of your builds.</li>
+          <li><b>Wide, heavy headings.</b> Used on the website only. They read like site hoarding and signwriting.</li>
         </ul>
       </div>
       <div class="k-color">
         <span class="label">Colour</span>
         <div class="swatches">
-          <div class="sw"><i style="background:#D2561E"></i><b>Kiln orange</b><span>#D2561E · accent only</span></div>
+          <div class="sw"><i style="background:#F46425"></i><b>Logo orange</b><span>#F46425 · logo &amp; buttons</span></div>
           <div class="sw"><i style="background:#1D2125"></i><b>Welsh slate</b><span>#1D2125 · text, vans</span></div>
           <div class="sw"><i style="background:#B59E74"></i><b>Gritstone</b><span>#B59E74 · secondary</span></div>
           <div class="sw"><i style="background:#5A636A"></i><b>Steel</b><span>#5A636A · small print</span></div>
@@ -570,39 +576,45 @@ footer.site .wrap{display:flex;justify-content:space-between;gap:12px 24px;flex-
           <div><span class="label">Body · Archivo</span><span class="s2">Plain, readable text for quotes, invoices and the website.</span></div>
           <div><span class="label">Client words · Newsreader Italic</span><span class="s3">“Reece is undoubtedly a perfectionist.”</span></div>
           <div><span class="label">Labels · IBM Plex Mono</span><span class="s4">Shell complete · S20 6QF · Rev A</span></div>
+          <div><span class="label">Logo lettering · unchanged (Barlow is the closest free match)</span><span class="s5">R.Hall &amp; Son Developments Ltd</span></div>
         </div>
         <p class="form-note">All free Google fonts, so they cost nothing to use on the site, quotes and signage.</p>
       </div>
       <div class="k-domain">
-        <span class="label">Domain options</span>
-        <div class="dom-now"><span class="domain-old">rhallandsondevelopments.co.uk</span><p>The current address is 24 characters before the .co.uk, and people can read “rhallandson” as “rhalland son”. It's hard to say over the phone and easy to mistype.</p></div>
-        <ul class="dom-list"><li class="top"><div><b>hallandson.co.uk</b><em>Top pick</em></div><span>Short, says the name, and UK customers trust .co.uk.</span></li><li class=""><div><b>rhallandson.co.uk</b></div><span>Keeps the R to match the company name.</span></li><li class=""><div><b>hallandsonbuild.co.uk</b></div><span>Says what you do. Good on a van.</span></li><li class=""><div><b>hallandsonhomes.co.uk</b></div><span>Suits a new-build focus.</span></li><li class=""><div><b>reecehall.co.uk</b></div><span>Your own name. Useful for a personal email address.</span></li><li class=""><div><b>hallandson.uk</b></div><span>Shortest option. Worth buying next to the .co.uk.</span></li><li class=""><div><b>rhallandson.com</b></div><span>A .com backup, so nobody else can take it.</span></li><li class=""><div><b>hallandson.build</b></div><span>Modern ending, but less familiar to customers.</span></li></ul>
-        <p class="dom-foot"><b>Already taken:</b> hallandson.com, hallandsons.co.uk, hallandsonbuilding.co.uk, halldevelopments.co.uk.<br>Every option above was double-checked against the official registries (Nominet for .uk, Verisign for .com) on 26 Sep 2026 and was unregistered. Availability can change at any time, so register the one you want soon. Keep the old domain and point it at the new one, so existing links and Google rankings carry over.</p>
+        <span class="label">Domain</span>
+        <div class="dom-now"><span class="domain-old">rhallandsondevelopments.co.uk</span><span class="domain-big">rhallandson.co.uk</span><p>Your choice. It's 11 characters instead of 24, so it's easier to say over the phone and fits on the van.</p></div>
+        <ul class="dom-list">
+          <li class="top"><div><b>rhallandson.co.uk</b><em>Chosen</em></div><span>Main website and email, e.g. reece@rhallandson.co.uk</span></li>
+          <li><div><b>rhallandson.uk</b></div><span>Worth buying too, and pointing at the .co.uk, so nobody else can take it.</span></li>
+          <li><div><b>rhallandson.com</b></div><span>Same again for the .com.</span></li>
+          <li><div><b>rhallandsondevelopments.co.uk</b></div><span>Keep renewing it and redirect it to the new site, so old links and Google rankings carry over.</span></li>
+        </ul>
+        <p class="dom-foot">All three new domains were unregistered when checked against the official registries (Nominet for .uk, Verisign for .com) on 26 Sep 2026. Register them soon, as availability can change at any time.</p>
       </div>
       <div class="k-apps">
         <span class="label">How it looks out in the world</span>
         <div class="apps">
-          <svg viewBox="0 0 600 260" role="img" aria-label="Van side panel with the new logo, phone number and domain">
+          <svg viewBox="0 0 600 260" role="img" aria-label="Van side panel with the logo, phone number and new domain">
             <rect width="600" height="260" fill="#E4E3DD"/>
             <path d="M40 60h360l110 60 50 12v78H40z" fill="#1D2125"/>
             <path d="M420 72l80 46h-80z" fill="#3A4249"/>
-            <rect x="40" y="190" width="520" height="8" fill="#D2561E"/>
+            <rect x="40" y="190" width="520" height="8" fill="#F46425"/>
             <circle cx="140" cy="212" r="30" fill="#15181B"/><circle cx="140" cy="212" r="12" fill="#5A636A"/>
             <circle cx="460" cy="212" r="30" fill="#15181B"/><circle cx="460" cy="212" r="12" fill="#5A636A"/>
-            <use href="#mark" x="70" y="86" width="64" height="64" style="color:#EC7038"/>
-            <text x="150" y="118" fill="#EEEEEA" font-family="Archivo, Arial Black, sans-serif" font-weight="800" font-size="30" font-stretch="125%" style="font-stretch:125%">R HALL &amp; SON</text>
-            <text x="151" y="142" fill="#B59E74" font-family="IBM Plex Mono, monospace" font-size="12" letter-spacing="2">NEW BUILDS · EXTENSIONS · RENOVATIONS</text>
-            <text x="70" y="178" fill="#EEEEEA" font-family="Archivo, Arial, sans-serif" font-weight="700" font-size="20">07837 925696 · hallandson.co.uk</text>
+            <use href="#mark" x="70" y="84" width="56" height="60" style="color:#F46425"/>
+            <text x="142" y="112" fill="#FFFFFF" font-family="Barlow, Arial, sans-serif" font-weight="600" font-size="32">R.Hall &amp; Son</text>
+            <text x="143" y="136" fill="#FFFFFF" font-family="Barlow, Arial, sans-serif" font-weight="500" font-size="17">Developments Ltd</text>
+            <text x="70" y="176" fill="#EEEEEA" font-family="Archivo, Arial, sans-serif" font-weight="700" font-size="20">07837 925696 · rhallandson.co.uk</text>
           </svg>
-          <svg viewBox="0 0 360 260" role="img" aria-label="Site board with the new logo on a fence">
+          <svg viewBox="0 0 360 260" role="img" aria-label="Site board with the logo on a fence">
             <rect width="360" height="260" fill="#E4E3DD"/>
             <rect x="0" y="200" width="360" height="60" fill="#B59E74"/>
             <rect x="60" y="40" width="10" height="200" fill="#5A636A"/><rect x="290" y="40" width="10" height="200" fill="#5A636A"/>
-            <rect x="40" y="30" width="280" height="160" fill="#D2561E"/>
-            <use href="#mark" x="64" y="52" width="54" height="54" style="color:#fff"/>
-            <text x="64" y="138" fill="#fff" font-family="Archivo, Arial Black, sans-serif" font-weight="800" font-size="26" style="font-stretch:125%">R HALL &amp; SON</text>
-            <text x="64" y="158" fill="#fff" font-family="IBM Plex Mono, monospace" font-size="11" letter-spacing="1.5" opacity=".85">ANOTHER HOME, BUILT RIGHT</text>
-            <text x="64" y="178" fill="#1D2125" font-family="Archivo, Arial, sans-serif" font-weight="700" font-size="15">07837 925696</text>
+            <rect x="40" y="30" width="280" height="160" fill="#000"/>
+            <use href="#mark" x="152" y="44" width="56" height="60" style="color:#F46425"/>
+            <text x="180" y="130" fill="#fff" text-anchor="middle" font-family="Barlow, Arial, sans-serif" font-weight="600" font-size="24">R.Hall &amp; Son</text>
+            <text x="180" y="150" fill="#fff" text-anchor="middle" font-family="Barlow, Arial, sans-serif" font-weight="500" font-size="14">Developments Ltd</text>
+            <text x="180" y="176" fill="#F46425" text-anchor="middle" font-family="Archivo, Arial, sans-serif" font-weight="700" font-size="14">07837 925696 · rhallandson.co.uk</text>
           </svg>
         </div>
       </div>
