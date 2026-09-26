@@ -1,0 +1,726 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="R Hall &amp; Son: family-run builders in Sheffield. New builds, extensions and full renovations, roof to cellar.">
+<meta property="og:title" content="R Hall &amp; Son · Sheffield builders">
+<meta property="og:description" content="New builds, extensions and full renovations across Sheffield.">
+<meta property="og:image" content="img/hero.jpg">
+<style>:root{color-scheme:light}body{margin:0}[hidden]{display:none!important}</style>
+<title>R Hall &amp; Son</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500&display=swap">
+<style>
+:root{
+  --mortar:#EEEEEA; --mortar-2:#E4E3DD; --paper:#F7F7F4;
+  --slate:#1D2125; --slate-2:#2A3035; --steel:#5A636A;
+  --grit:#B59E74; --grit-soft:#D9CCB2;
+  --kiln:#D2561E; --kiln-ink:#B4461A; --on-kiln:#FFFFFF;
+  --bg:var(--mortar); --surface:var(--paper); --ink:var(--slate); --muted:var(--steel);
+  --rule:color-mix(in srgb, var(--slate) 16%, transparent);
+  --rule-strong:color-mix(in srgb, var(--slate) 70%, transparent);
+  --hero-ink:#F4F2EC;
+  --display:"Archivo", "Arial Black", "Helvetica Neue", Arial, sans-serif;
+  --body:"Archivo", "Helvetica Neue", Arial, sans-serif;
+  --serif:"Newsreader", Georgia, "Times New Roman", serif;
+  --mono:"IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --wrap:1240px; --gutter:clamp(16px, 4vw, 40px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#15181B; --surface:#1C2024; --ink:#ECEAE4; --muted:#A3A9AD;
+    --mortar-2:#22272B; --grit-soft:#4A4234;
+    --kiln:#EC7038; --kiln-ink:#F08A58; --on-kiln:#15181B;
+    --rule:color-mix(in srgb, #ECEAE4 14%, transparent);
+    --rule-strong:color-mix(in srgb, #ECEAE4 60%, transparent);
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#15181B; --surface:#1C2024; --ink:#ECEAE4; --muted:#A3A9AD;
+  --mortar-2:#22272B; --grit-soft:#4A4234;
+  --kiln:#EC7038; --kiln-ink:#F08A58; --on-kiln:#15181B;
+  --rule:color-mix(in srgb, #ECEAE4 14%, transparent);
+  --rule-strong:color-mix(in srgb, #ECEAE4 60%, transparent);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{overflow-x:clip;background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--body);font-stretch:100%;-webkit-font-smoothing:antialiased}
+img,video{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--kiln);outline-offset:3px}
+.wrap{max-width:var(--wrap);margin-inline:auto;padding-inline:var(--gutter)}
+.mono{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+h1,h2,h3{font-family:var(--display);font-stretch:125%;font-weight:800;line-height:.95;letter-spacing:-.01em;text-wrap:balance;margin:0;text-transform:uppercase}
+h2{font-size:clamp(34px,5.4vw,68px)}
+h3{font-size:clamp(19px,1.8vw,22px);line-height:1.1}
+p{margin:0;text-wrap:pretty}
+.wrap>*,.head>*,.svc>*,.about-grid>*,.tb>*,.kit>*,.rev-grid>*,.d2r>*{min-width:0}
+@media (max-width:560px){h1,h2,h3,.brand b,.lockup b,.cell .big,.domain-big,.proof b{font-stretch:108%}.hero h1{font-size:clamp(34px,11vw,52px)}h2{font-size:clamp(28px,8.4vw,40px)}}
+.lede{font-size:clamp(18px,1.6vw,20px);color:var(--muted);max-width:58ch}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;gap:10px;font:700 15px/1 var(--body);font-stretch:112%;letter-spacing:.02em;text-transform:uppercase;text-decoration:none;padding:16px 22px;border:2px solid transparent;cursor:pointer;transition:background .15s,color .15s,border-color .15s}
+.btn-kiln{background:var(--kiln);color:var(--on-kiln)}
+.btn-kiln:hover{background:var(--kiln-ink)}
+.btn-line{border-color:currentColor;background:transparent;color:inherit}
+.btn-line:hover{background:color-mix(in srgb, currentColor 12%, transparent)}
+.btn svg{width:18px;height:18px}
+
+/* Concept ribbon */
+.ribbon{background:var(--slate);color:#D9D6CE;font-family:var(--mono);font-size:12px;letter-spacing:.06em}
+.ribbon .wrap{display:flex;gap:16px;justify-content:space-between;align-items:center;padding-block:9px;flex-wrap:wrap}
+.ribbon a{color:#F4B08D;text-decoration:none;border-bottom:1px solid currentColor}
+
+/* Header */
+header.site{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:color-mix(in srgb, var(--bg) 92%, transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--rule)}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-block:12px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
+.brand svg{width:40px;height:40px;flex:none}
+.brand b{display:block;font:800 17px/1 var(--display);font-stretch:125%;letter-spacing:.01em;text-transform:uppercase}
+.brand small{display:block;font:500 10px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:5px}
+nav.links{display:flex;gap:26px;align-items:center}
+nav.links a{text-decoration:none;font-weight:600;font-size:15px;color:var(--ink);opacity:.8}
+nav.links a:hover{opacity:1;color:var(--kiln-ink)}
+.call{display:inline-flex;align-items:center;gap:8px;font:700 15px/1 var(--body);font-variant-numeric:tabular-nums;text-decoration:none;background:var(--kiln);color:var(--on-kiln);padding:11px 14px}
+.call svg{width:16px;height:16px}
+@media (max-width:900px){nav.links{display:none}}
+@media (max-width:420px){.brand small{display:none}.call span{display:none}}
+
+/* Hero */
+.hero{position:relative;color:var(--hero-ink);background:#1D2125;overflow:hidden}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 40%}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg, rgba(20,23,26,.86) 0%, rgba(20,23,26,.55) 45%, rgba(20,23,26,.05) 80%),linear-gradient(0deg, rgba(20,23,26,.6), transparent 40%)}
+.hero .wrap{position:relative;z-index:1;padding-block:clamp(72px,11vw,150px) clamp(40px,6vw,72px);display:grid;gap:28px}
+.hero .tag{color:#E9DFC9;display:flex;gap:14px;flex-wrap:wrap}
+.hero .tag span+span::before{content:"/";margin-right:14px;opacity:.5}
+.hero h1{font-size:clamp(46px,9vw,124px);max-width:11ch;line-height:.88}
+.hero h1 em{font-style:normal;color:#F08A58}
+.hero p{font-size:clamp(18px,1.7vw,21px);max-width:44ch;color:#E6E3DB}
+.hero .ctas{display:flex;gap:12px;flex-wrap:wrap}
+.hero .btn-line{color:#F4F2EC}
+.hero .caption{position:absolute;right:var(--gutter);bottom:18px;z-index:1;color:#E6E3DB;opacity:.8}
+@media (max-width:700px){.hero .caption{display:none}.hero::after{background:linear-gradient(0deg, rgba(20,23,26,.92) 10%, rgba(20,23,26,.55) 70%, rgba(20,23,26,.35))}}
+
+/* Proof strip */
+.proof{border-bottom:1px solid var(--rule)}
+.proof .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.proof .wrap>div{padding:22px 20px;border-left:1px solid var(--rule);display:grid;gap:4px}
+.proof .wrap>div:first-child{border-left:0;padding-left:0}
+.proof b{font:800 20px/1.1 var(--display);font-stretch:112%;text-transform:uppercase}
+.proof span{color:var(--muted);font-size:14px;line-height:1.4}
+@media (max-width:800px){.proof .wrap{grid-template-columns:1fr 1fr}.proof .wrap>div{padding:18px 14px}.proof .wrap>div:nth-child(odd){border-left:0;padding-left:0}.proof .wrap>div:nth-child(n+3){border-top:1px solid var(--rule)}}
+
+section{padding-block:clamp(64px,9vw,120px)}
+.head{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:24px 48px;align-items:end;margin-bottom:clamp(32px,5vw,56px)}
+.head .mono{color:var(--kiln-ink);grid-column:1/-1}
+@media (max-width:820px){.head{grid-template-columns:1fr}}
+
+/* Drawing to reality */
+.d2r{display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,2vw,24px);position:relative}
+.d2r figure{margin:0;display:grid;gap:10px}
+.d2r .frame{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--mortar-2)}
+.d2r .frame img{width:100%;height:100%;object-fit:cover}
+.d2r figcaption{display:flex;justify-content:space-between;gap:12px;color:var(--muted);border-top:1px solid var(--rule-strong);padding-top:10px}
+.d2r figcaption b{color:var(--ink);font-weight:500}
+.d2r .arrow{position:absolute;left:50%;top:calc(50% - 20px);transform:translate(-50%,-50%);z-index:2;width:56px;height:56px;border-radius:50%;background:var(--kiln);color:var(--on-kiln);display:grid;place-items:center;box-shadow:0 0 0 6px var(--bg)}
+.d2r .arrow svg{width:24px;height:24px}
+.d2r-notes{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px}
+.d2r-notes div{border-top:2px solid var(--ink);padding-top:14px;display:grid;gap:6px}
+.d2r-notes p{color:var(--muted);font-size:16px}
+@media (max-width:700px){.d2r{grid-template-columns:1fr}.d2r .arrow{top:50%;transform:translate(-50%,-50%) rotate(90deg)}.d2r-notes{grid-template-columns:1fr}}
+
+/* Services */
+.services{background:var(--surface);border-block:1px solid var(--rule)}
+.svc{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(24px,4vw,64px);align-items:start}
+.svc-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule-strong)}
+.svc-list li{border-bottom:1px solid var(--rule)}
+.svc-list button{all:unset;box-sizing:border-box;width:100%;cursor:pointer;display:grid;grid-template-columns:1fr auto;gap:6px 16px;padding:20px 4px;align-items:center}
+.svc-list button:focus-visible{outline:2px solid var(--kiln);outline-offset:-2px}
+.svc-list h3{transition:color .15s}
+.svc-list .sub{grid-column:1/-1;color:var(--muted);font-size:16px;max-width:52ch;display:none}
+.svc-list .plus{font:500 13px/1 var(--mono);color:var(--muted)}
+.svc-list li.on h3{color:var(--kiln-ink)}
+.svc-list li.on .sub{display:block}
+.svc-list li .inline-img{display:none}
+.svc-view{position:sticky;top:100px;margin:0}
+.svc-view .frame{aspect-ratio:4/3.3;overflow:hidden;background:var(--mortar-2)}
+.svc-view img{width:100%;height:100%;object-fit:cover;transition:opacity .25s}
+.svc-view figcaption{margin-top:10px;color:var(--muted)}
+@media (max-width:820px){.svc{grid-template-columns:1fr}.svc-view{display:none}.svc-list li.on .inline-img{display:block;grid-column:1/-1;aspect-ratio:4/3;width:100%;object-fit:cover;margin-top:10px}}
+
+/* Process */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,3vw,36px) clamp(16px,2vw,28px);counter-reset:step;list-style:none;padding:0;margin:0}
+.steps li{display:grid;gap:12px;align-content:start}
+.steps .ph{aspect-ratio:3/2;overflow:hidden;background:var(--mortar-2)}
+.steps .ph img{width:100%;height:100%;object-fit:cover}
+.steps .n{display:flex;align-items:baseline;gap:12px;border-top:2px solid var(--ink);padding-top:12px}
+.steps .n span{font:500 12px/1 var(--mono);color:var(--kiln-ink);letter-spacing:.08em}
+.steps p{color:var(--muted);font-size:16px}
+@media (max-width:900px){.steps{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.steps{grid-template-columns:1fr}}
+
+/* Gallery */
+.work{background:var(--slate);color:#ECEAE4;--muted:#A3A9AD;--rule:rgba(236,234,228,.14)}
+.work .head .mono{color:#F08A58}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
+.chip{all:unset;cursor:pointer;font:500 13px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;padding:10px 14px;border:1px solid rgba(236,234,228,.28);color:#D9D6CE}
+.chip:hover{border-color:#ECEAE4;color:#fff}
+.chip[aria-pressed="true"]{background:#EC7038;border-color:#EC7038;color:#15181B}
+.chip:focus-visible{outline:2px solid #EC7038;outline-offset:2px}
+.chip small{opacity:.6;margin-left:6px;font-size:11px}
+.grid{columns:4 260px;column-gap:12px}
+.grid button{all:unset;cursor:zoom-in;display:block;break-inside:avoid;margin-bottom:12px;position:relative;width:100%;background:#2A3035}
+.grid button:focus-visible{outline:2px solid #EC7038;outline-offset:2px}
+.grid img{width:100%;height:auto}
+.grid .cap{position:absolute;left:0;right:0;bottom:0;padding:28px 12px 10px;background:linear-gradient(0deg,rgba(15,17,19,.85),transparent);font:500 12px/1.3 var(--mono);letter-spacing:.04em;color:#F4F2EC;opacity:0;transition:opacity .2s}
+.grid button:hover .cap,.grid button:focus-visible .cap{opacity:1}
+@media (hover:none){.grid .cap{opacity:1}}
+
+/* Lightbox */
+.lb[hidden]{display:none}
+.lb{position:fixed;inset:0;z-index:100;background:rgba(12,14,16,.94);display:grid;grid-template-rows:auto 1fr auto;padding:max(14px,env(safe-area-inset-top,0px)) 16px max(14px,env(safe-area-inset-bottom,0px))}
+.lb-top{display:flex;justify-content:space-between;align-items:center;color:#D9D6CE;gap:12px}
+.lb figure{margin:0;display:grid;place-items:center;min-height:0}
+.lb img{max-height:100%;max-width:100%;object-fit:contain;min-height:0}
+.lb-bot{display:flex;justify-content:center;gap:10px;padding-top:12px}
+.lb button{all:unset;cursor:pointer;color:#fff;border:1px solid rgba(255,255,255,.3);padding:10px 16px;font:500 13px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase}
+.lb button:hover{border-color:#fff}
+.lb button:focus-visible{outline:2px solid #EC7038}
+
+/* Video */
+.vids{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:clamp(40px,6vw,72px);padding-top:32px;border-top:1px solid rgba(236,234,228,.14)}
+.vids figure{margin:0;display:grid;gap:10px}
+.vids video{width:100%;aspect-ratio:16/9;object-fit:cover;background:#0F1113}
+.vids figcaption{display:flex;justify-content:space-between;color:#A3A9AD;font:500 12px/1.3 var(--mono);letter-spacing:.06em;text-transform:uppercase}
+.vids figcaption b{color:#ECEAE4;font-weight:500}
+.vids-head{grid-column:1/-1;display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap}
+.vids-head h3{color:#ECEAE4}
+@media (max-width:800px){.vids{grid-template-columns:1fr}}
+
+/* Reviews */
+.reviews .lead-quote{font:italic 400 clamp(26px,3.6vw,46px)/1.18 var(--serif);max-width:28ch;text-wrap:balance;margin:0}
+.reviews .lead-quote::before{content:"“";color:var(--kiln);margin-left:-.45em}
+.rev-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:clamp(24px,4vw,56px);margin-top:clamp(36px,5vw,56px)}
+.rev{margin:0;display:grid;gap:16px;align-content:start;border-top:2px solid var(--ink);padding-top:20px}
+.rev blockquote{margin:0;font:italic 400 19px/1.55 var(--serif);display:grid;gap:14px}
+.rev figcaption{display:flex;gap:10px;align-items:center;color:var(--muted)}
+.rev figcaption b{color:var(--ink);font:600 15px/1.2 var(--body)}
+.rev-side{display:grid;gap:clamp(24px,4vw,40px);align-content:start}
+@media (max-width:820px){.rev-grid{grid-template-columns:1fr}}
+
+/* About */
+.about{background:var(--surface);border-block:1px solid var(--rule)}
+.about-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,72px);align-items:center}
+.about-grid .ph{aspect-ratio:4/5;overflow:hidden;background:var(--mortar-2);position:relative}
+.about-grid .ph img{width:100%;height:100%;object-fit:cover}
+.about-grid .ph .mono{position:absolute;left:12px;bottom:12px;background:var(--bg);color:var(--ink);padding:6px 9px}
+.about-copy{display:grid;gap:20px}
+.about-copy p{max-width:56ch}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--rule-strong);margin-top:8px}
+.facts div{padding:14px 0;border-bottom:1px solid var(--rule);display:grid;gap:2px}
+.facts div:nth-child(odd){padding-right:16px}
+.facts dt{color:var(--muted)}
+.facts dd{margin:0;font-weight:600}
+@media (max-width:820px){.about-grid{grid-template-columns:1fr}.about-grid .ph{aspect-ratio:4/3}}
+
+/* Contact / title block */
+.contact .tb{border:2px solid var(--ink);display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);background:var(--surface)}
+.tb-form{padding:clamp(20px,3.5vw,44px);display:grid;gap:20px;border-right:2px solid var(--ink)}
+.tb-form h2{font-size:clamp(30px,4.2vw,52px)}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.field{display:grid;gap:6px}
+.field.full{grid-column:1/-1}
+.field label{font:500 11px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.field input,.field select,.field textarea{font:400 16px/1.4 var(--body);color:var(--ink);background:var(--bg);border:1px solid var(--rule-strong);border-radius:0;padding:12px;width:100%}
+.field textarea{min-height:110px;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{outline:2px solid var(--kiln);outline-offset:-1px;border-color:transparent}
+.form-foot{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.form-note{font-size:14px;color:var(--muted)}
+.sent{border:1px solid var(--kiln);padding:14px 16px;font-size:15px;background:color-mix(in srgb, var(--kiln) 8%, transparent)}
+.tb-side{display:grid;grid-template-rows:auto;align-content:stretch}
+.cell{padding:16px 20px;border-bottom:1px solid var(--rule-strong);display:grid;gap:6px}
+.cell:last-child{border-bottom:0}
+.cell .mono{color:var(--muted);font-size:11px}
+.cell .big{font:800 clamp(22px,2.6vw,30px)/1.1 var(--display);font-stretch:112%;font-variant-numeric:tabular-nums;word-break:break-word}
+.cell .val{font-weight:600;word-break:break-word}
+.cell-row{display:grid;grid-template-columns:1fr 1fr}
+.cell-row .cell+.cell{border-left:1px solid var(--rule-strong)}
+.copy{all:unset;cursor:pointer;font:500 11px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--kiln-ink);justify-self:start;border-bottom:1px solid currentColor;padding-bottom:2px}
+.copy:focus-visible{outline:2px solid var(--kiln);outline-offset:3px}
+.cell.brandcell{background:var(--ink);color:var(--bg);grid-template-columns:auto 1fr;align-items:center;gap:14px}
+.cell.brandcell svg{width:46px;height:46px}
+.cell.brandcell b{font:800 18px/1 var(--display);font-stretch:125%;text-transform:uppercase}
+.cell.brandcell small{display:block;font:500 10px/1.4 var(--mono);letter-spacing:.12em;text-transform:uppercase;opacity:.7;margin-top:4px}
+@media (max-width:860px){.contact .tb{grid-template-columns:1fr}.tb-form{border-right:0;border-bottom:2px solid var(--ink)}}
+@media (max-width:520px){.fields{grid-template-columns:1fr}}
+
+footer.site{border-top:1px solid var(--rule);padding-block:28px;color:var(--muted);font-size:14px}
+footer.site .wrap{display:flex;justify-content:space-between;gap:12px 24px;flex-wrap:wrap}
+
+/* Proposal notes */
+.notes{background:var(--mortar-2);border-top:6px solid var(--kiln)}
+.notes .intro{display:grid;gap:14px;max-width:70ch;margin-bottom:48px}
+.notes .intro .mono{color:var(--kiln-ink)}
+.notes h2{font-size:clamp(30px,4.4vw,54px)}
+.kit{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+.kit > *{background:var(--surface);border:1px solid var(--rule);padding:clamp(18px,2.4vw,28px);display:grid;gap:14px;align-content:start}
+.kit .label{font:500 11px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.k-logo{grid-column:span 7}
+.k-why{grid-column:span 5}
+.k-color{grid-column:span 12}
+.k-type{grid-column:span 5}
+.k-domain{grid-column:span 7}
+.k-apps{grid-column:span 12}
+.lockups{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:10px}
+.lockups > div{aspect-ratio:1.2;display:grid;place-items:center;padding:16px}
+.lk-a{background:#EEEEEA;color:#1D2125}
+.lk-b{background:#1D2125;color:#EEEEEA}
+.lk-c{background:#D2561E;color:#fff}
+.lockup{display:flex;align-items:center;gap:12px}
+.lockup svg{width:clamp(40px,5vw,58px);height:auto;flex:none}
+.lockup b{display:block;font:800 clamp(16px,2vw,24px)/1 var(--display);font-stretch:125%;text-transform:uppercase}
+.lockup small{display:block;font:500 9px/1.3 var(--mono);letter-spacing:.14em;text-transform:uppercase;opacity:.75;margin-top:6px}
+.lk-b svg,.lk-c svg{width:clamp(44px,6vw,72px)}
+.k-why ul{margin:0;padding-left:18px;display:grid;gap:10px;color:var(--muted)}
+.k-why li b{color:var(--ink)}
+.swatches{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.sw{display:grid;gap:8px}
+.sw i{display:block;aspect-ratio:1.6;border:1px solid var(--rule)}
+.sw b{font-weight:600;font-size:15px}
+.sw span{font:400 12px/1.3 var(--mono);color:var(--muted)}
+@media (max-width:700px){.swatches{grid-template-columns:repeat(3,1fr)}}
+.spec{display:grid;gap:18px}
+.spec .s1{font:800 clamp(34px,5vw,58px)/.9 var(--display);font-stretch:125%;text-transform:uppercase}
+.spec .s2{font:400 17px/1.5 var(--body)}
+.spec .s3{font:italic 400 22px/1.3 var(--serif)}
+.spec .s4{font:400 13px/1.4 var(--mono);letter-spacing:.08em;text-transform:uppercase}
+.spec > div{display:grid;gap:4px;border-top:1px solid var(--rule);padding-top:12px}
+.domain-big{font:800 clamp(22px,2.8vw,32px)/1.05 var(--display);font-stretch:112%;word-break:break-word}
+.domain-old{font:400 14px/1.4 var(--mono);color:var(--muted);text-decoration:line-through;word-break:break-all}
+.dom-now{display:grid;gap:6px}
+.dom-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule-strong)}
+.dom-list li{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:4px 16px;padding:11px 0;border-bottom:1px solid var(--rule);align-items:baseline}
+.dom-list li div{display:flex;gap:8px;align-items:baseline;flex-wrap:wrap;min-width:0}
+.dom-list b{font:500 15px/1.3 var(--mono);word-break:break-all}
+.dom-list em{font:600 10px/1 var(--mono);font-style:normal;letter-spacing:.1em;text-transform:uppercase;background:var(--kiln);color:var(--on-kiln);padding:4px 6px}
+.dom-list li.top b{font:800 19px/1.2 var(--display);font-stretch:112%}
+.dom-list span{color:var(--muted);font-size:15px;line-height:1.4}
+.dom-foot{color:var(--muted);font-size:14px}
+.dom-foot b{color:var(--ink)}
+@media (max-width:560px){.dom-list li{grid-template-columns:1fr}}
+.k-domain p{color:var(--muted);font-size:16px}
+.apps{display:grid;grid-template-columns:1.5fr 1fr;gap:16px}
+.apps svg{width:100%;height:auto;display:block}
+@media (max-width:900px){.k-logo,.k-why,.k-type,.k-domain{grid-column:span 12}.apps{grid-template-columns:1fr}}
+@media (max-width:560px){.lockups{grid-template-columns:1fr 1fr}.lk-a{grid-column:1/-1;aspect-ratio:2}}
+</style>
+</head>
+<body>
+
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="mark" viewBox="0 0 64 64">
+      <path fill="currentColor" d="M2 29 32 4l30 25v11L32 15 2 40z"/>
+      <path fill="currentColor" d="M12 37h9v23h-9zM43 37h9v23h-9zM21 45h22v8H21z"/>
+    </symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square" d="M4 12h15M13 6l6 6-6 6"/></symbol>
+  </defs>
+</svg>
+
+<div class="ribbon"><div class="wrap"><span>Website refresh concept for R Hall &amp; Son · September 2026</span><a href="#notes">Brand &amp; domain notes ↓</a></div></div>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="R Hall &amp; Son, home">
+      <svg style="color:var(--kiln)"><use href="#mark"/></svg>
+      <span><b>R Hall &amp; Son</b><small>Developments · Sheffield</small></span>
+    </a>
+    <nav class="links" aria-label="Main">
+      <a href="#work">Our work</a>
+      <a href="#services">Services</a>
+      <a href="#process">How we work</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="call" href="tel:+447837925696"><svg><use href="#i-phone"/></svg><span>07837 925696</span></a>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <img src="img/hero.jpg" alt="A detached stone new build by R Hall &amp; Son, with slate roof and a full-height glazed gable" fetchpriority="high">
+    <div class="wrap">
+      <div class="tag mono"><span>Family-run builders</span><span>Sheffield</span><span>Est. 2023</span></div>
+      <h1>Built right, <em>roof</em> to cellar.</h1>
+      <p>New builds, extensions and full renovations across Sheffield. Every job is run by Reece, from the first site visit to the day you get the keys.</p>
+      <div class="ctas">
+        <a class="btn btn-kiln" href="#contact">Get a free quote <svg><use href="#i-arrow"/></svg></a>
+        <a class="btn btn-line" href="#work">See our work</a>
+      </div>
+    </div>
+    <span class="caption mono">Stone new build · shell complete</span>
+  </div>
+
+  <div class="proof">
+    <div class="wrap">
+      <div><b>Free quotes</b><span>Reece comes out, walks the job and prices it properly</span></div>
+      <div><b>8.00am starts</b><span>We turn up when we say we will</span></div>
+      <div><b>No surprise extras</b><span>Regular cost updates as the job goes</span></div>
+      <div><b>Roof to cellar</b><span>Structure, roofing, kitchens, bathrooms, outside</span></div>
+    </div>
+  </div>
+
+  <section id="drawing">
+    <div class="wrap">
+      <div class="head">
+        <span class="mono">Featured project</span>
+        <h2>We build what was drawn.</h2>
+        <p class="lede">On the left is the planning visual. On the right is the house we built from it: same stone, same gables, same glazing. What you signed off is what you get.</p>
+      </div>
+      <div class="d2r">
+        <figure>
+          <div class="frame"><img src="img/render.jpg" alt="Planning visual of a two-storey stone house with glazed gables and a stone terrace" loading="lazy"></div>
+          <figcaption class="mono"><b>Planning visual</b><span>Approved design</span></figcaption>
+        </figure>
+        <div class="arrow" aria-hidden="true"><svg><use href="#i-arrow"/></svg></div>
+        <figure>
+          <div class="frame"><img src="img/built.jpg" alt="The same stone house built, with dark grey bi-fold doors, photographed in snow" loading="lazy"></div>
+          <figcaption class="mono"><b>As built</b><span>Shell complete, winter</span></figcaption>
+        </figure>
+      </div>
+      <div class="d2r-notes">
+        <div><h3>Planning handled</h3><p>We help you through drawings, planning permission and building regs before a spade goes in.</p></div>
+        <div><h3>Local stone</h3><p>Coursed stone and slate that suit Sheffield and the Peak fringe, laid by our own team.</p></div>
+        <div><h3>Glazing that lines up</h3><p>Openings set out to the drawing, so the bi-folds and gable glass sit exactly where they should.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <div class="wrap">
+      <div class="head">
+        <span class="mono">What we do</span>
+        <h2>One team for the whole job.</h2>
+        <p class="lede">You deal with one builder from groundwork to finishing trims. No chasing separate trades, and no gaps between them.</p>
+      </div>
+      <div class="svc">
+        <ul class="svc-list" id="svcList"></ul>
+        <figure class="svc-view" aria-live="polite">
+          <div class="frame"><img id="svcImg" src="img/estate.jpg" alt=""></div>
+          <figcaption class="mono" id="svcCap"></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="process">
+    <div class="wrap">
+      <div class="head">
+        <span class="mono">How a job runs</span>
+        <h2>From first visit to handover.</h2>
+        <p class="lede">Every build follows the same order. You'll always know which stage we're at, what comes next and what it costs.</p>
+      </div>
+      <ol class="steps">
+        <li><div class="ph"><img src="img/render-s.jpg" alt="Planning visual of a stone house" loading="lazy"></div><div class="n"><span>01</span><h3>Visit &amp; quote</h3></div><p>Reece visits, listens to what you want and gives you a clear, itemised price. Free, with no obligation.</p></li>
+        <li><div class="ph"><img src="img/site-newbuild-s.jpg" alt="Scaffolded new build with the roof trusses going on" loading="lazy"></div><div class="n"><span>02</span><h3>Plans &amp; permissions</h3></div><p>We work with your architect, or ours, and guide you through planning and building control.</p></li>
+        <li><div class="ph"><img src="img/site-steels-s.jpg" alt="Steel beams supported on props during a renovation" loading="lazy"></div><div class="n"><span>03</span><h3>Structure</h3></div><p>Foundations, steels and walls. Knocking through and opening up, done safely and signed off.</p></li>
+        <li><div class="ph"><img src="img/site-rafters-s.jpg" alt="Hand-cut timber roof frame" loading="lazy"></div><div class="n"><span>04</span><h3>Roof &amp; shell</h3></div><p>Cut roofs, dormers, lanterns and slate. The house is weathertight before the inside starts.</p></li>
+        <li><div class="ph"><img src="img/site-ufh-s.jpg" alt="Underfloor heating pipework laid across a floor" loading="lazy"></div><div class="n"><span>05</span><h3>Services &amp; first fix</h3></div><p>Underfloor heating, electrics, plumbing and insulation, all coordinated around the build.</p></li>
+        <li><div class="ph"><img src="img/kitchen-open-s.jpg" alt="Finished open-plan kitchen with roof lanterns" loading="lazy"></div><div class="n"><span>06</span><h3>Finish &amp; handover</h3></div><p>Kitchens, bathrooms, floors and joinery. Then we walk round the whole job with you before we hand over.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="work" id="work">
+    <div class="wrap">
+      <div class="head">
+        <span class="mono">Our work</span>
+        <h2>Recent jobs around Sheffield.</h2>
+        <p class="lede">Finished rooms, and the bits most builders don't photograph: steels going in, roofs being framed, floors going down.</p>
+      </div>
+      <div class="chips" id="chips" role="group" aria-label="Filter projects"></div>
+      <div class="grid" id="grid"></div>
+      <div class="vids"><div class="vids-head"><h3>Walk-throughs</h3><span class="mono" style="color:#A3A9AD">Tap to play · no sound</span></div><figure><video src="vid/Horsley-Gate-720.mp4" poster="vid/Horsley-Gate.jpg" controls muted playsinline preload="none" aria-label="Video walk-through: Horsleygate Lane"></video><figcaption><b>Horsleygate Lane</b><span>0:48</span></figcaption></figure><figure><video src="vid/Ecclesall-Road-South-horizontal1-720.mp4" poster="vid/Ecclesall-Road-South-horizontal1.jpg" controls muted playsinline preload="none" aria-label="Video walk-through: Ecclesall Road South"></video><figcaption><b>Ecclesall Road South</b><span>1:30</span></figcaption></figure><figure><video src="vid/New-Build-720.mp4" poster="vid/New-Build.jpg" controls muted playsinline preload="none" aria-label="Video walk-through: New build"></video><figcaption><b>New build</b><span>0:42</span></figcaption></figure></div>
+    </div>
+  </section>
+
+  <section class="reviews" id="reviews">
+    <div class="wrap">
+      <div class="head">
+        <span class="mono">What clients say</span>
+        <p class="lead-quote">They don’t believe in the word ‘can’t’ and go about everything with enormous professionalism and efficiency.”</p>
+      </div>
+      <div class="rev-grid">
+        <figure class="rev">
+          <blockquote>
+            <p>“I have known so many people that have suffered as a result of poor workmanship, but this team is absolutely fantastic. They turn up when they say they will, they start work on the dot at 8.00am, they don't expect cups of tea and coffee, and most important of all, the work they do is of exceptional quality and without compromise.</p>
+            <p>Reece is undoubtedly a perfectionist, and the result is phenomenal. The planning, forethought and project management that Reece puts into every project is a credit to him and shows in the results. Amazingly good value for money, without quibbles and dubious add-ons at the end.”</p>
+          </blockquote>
+          <figcaption><b>Homeowner</b><span class="mono">Sheffield</span></figcaption>
+        </figure>
+        <div class="rev-side">
+          <figure class="rev">
+            <blockquote><p>“A total refurbishment: roof off, walls knocked out, an en-suite bedroom in the roof space and a kitchen extension. Quality of workmanship was excellent. Things changed as the build went on and Reece gave me cost updates regularly, so I could keep track of the budget. The finished article exceeded expectations.”</p></blockquote>
+            <figcaption><b>Phil Crooks</b><span class="mono">Full refurbishment</span></figcaption>
+          </figure>
+          <figure class="rev">
+            <blockquote><p>“Always great to work with Reece and the team.”</p></blockquote>
+            <figcaption><b>Edward Jacobs</b><span class="mono">Repeat client</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="wrap about-grid">
+      <div class="ph"><img src="img/van.jpg" alt="A two-storey extension with its new roof structure, with the works van parked outside" loading="lazy"><span class="mono">On site · Sheffield</span></div>
+      <div class="about-copy">
+        <span class="mono" style="color:var(--kiln-ink)">About us</span>
+        <h2>A family firm. Reece on every job.</h2>
+        <p>R Hall &amp; Son Developments is a family-run building company based in Owlthorpe, Sheffield. We build new homes and take on full renovations, and we handle everything in between.</p>
+        <p>We're small on purpose. Reece plans and runs every project himself, so the person who quoted your job is the person on site making sure it's right. Clients tend to come back, and they recommend us to their neighbours.</p>
+        <dl class="facts">
+          <div><dt class="mono">Company</dt><dd>R.Hall &amp; Son Developments Ltd</dd></div>
+          <div><dt class="mono">Established</dt><dd>August 2023</dd></div>
+          <div><dt class="mono">Based</dt><dd>Owlthorpe, Sheffield S20</dd></div>
+          <div><dt class="mono">Working</dt><dd>Sheffield &amp; surrounding area</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="tb">
+        <form class="tb-form" id="quote" novalidate>
+          <span class="mono" style="color:var(--kiln-ink)">Free quote</span>
+          <h2>Tell us about your project.</h2>
+          <div class="fields">
+            <div class="field"><label for="f-name">Your name</label><input id="f-name" name="name" autocomplete="name" required></div>
+            <div class="field"><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" required></div>
+            <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email"></div>
+            <div class="field"><label for="f-post">Postcode</label><input id="f-post" name="postcode" autocomplete="postal-code" placeholder="e.g. S11"></div>
+            <div class="field full"><label for="f-type">Type of work</label>
+              <select id="f-type" name="type"><option>Extension</option><option>Full renovation</option><option>New build</option><option>Roof or loft</option><option>Kitchen</option><option>Bathroom</option><option>Outside: drive, patio, garden room</option><option>Something else</option></select></div>
+            <div class="field full"><label for="f-msg">What are you planning?</label><textarea id="f-msg" name="message" placeholder="A rough idea is fine. Say if you already have drawings or planning permission."></textarea></div>
+          </div>
+          <div class="form-foot">
+            <button class="btn btn-kiln" type="submit">Send enquiry <svg><use href="#i-arrow"/></svg></button>
+            <span class="form-note">Reece replies personally, usually the same day.</span>
+          </div>
+          <div class="sent" id="sent" hidden></div>
+        </form>
+        <div class="tb-side">
+          <div class="cell"><span class="mono">Call Reece</span><span class="big" id="c-phone">07837 925696</span><button class="copy" type="button" data-copy="c-phone">Copy number</button></div>
+          <div class="cell"><span class="mono">Email</span><span class="val" id="c-email">info@rhallandsondevelopments.co.uk</span><button class="copy" type="button" data-copy="c-email">Copy email</button></div>
+          <div class="cell"><span class="mono">Office</span><span class="val">Moorthorpe Dell, Owlthorpe<br>Sheffield S20 6QF</span></div>
+          <div class="cell-row">
+            <div class="cell"><span class="mono">Hours on site</span><span class="val">From 8.00am</span></div>
+            <div class="cell"><span class="mono">Quotes</span><span class="val">Free, no obligation</span></div>
+          </div>
+          <div class="cell brandcell"><svg style="color:#EC7038"><use href="#mark"/></svg><div><b>R Hall &amp; Son</b><small>Developments Ltd · Sheffield</small></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <span>© 2026 R.Hall &amp; Son Developments Ltd · Sheffield</span>
+    <span>New builds · Extensions · Renovations · Roofing · Kitchens · Bathrooms</span>
+  </div>
+</footer>
+
+<section class="notes" id="notes">
+  <div class="wrap">
+    <div class="intro">
+      <span class="mono">Notes for Reece · not part of the live site</span>
+      <h2>Brand refresh &amp; domain.</h2>
+      <p class="lede">The current orange-and-black house logo is recognisable, so this keeps the orange and the house-and-H idea and makes it simpler and stronger. The new look is based on the things you actually build with: gritstone, slate and lime mortar.</p>
+    </div>
+    <div class="kit">
+      <div class="k-logo">
+        <span class="label">Logo</span>
+        <div class="lockups">
+          <div class="lk-a"><div class="lockup"><svg style="color:#D2561E"><use href="#mark"/></svg><div><b>R Hall &amp; Son</b><small>Developments · Sheffield</small></div></div></div>
+          <div class="lk-b"><svg style="color:#EC7038"><use href="#mark"/></svg></div>
+          <div class="lk-c"><svg style="color:#fff"><use href="#mark"/></svg></div>
+        </div>
+      </div>
+      <div class="k-why">
+        <span class="label">What changed</span>
+        <ul>
+          <li><b>A simpler mark.</b> A roof pitch over an H. It reads at van-sticker size, on a hi-vis back and as a tiny phone icon.</li>
+          <li><b>Orange stays.</b> People already know it from the vans and boards, so it's now the only accent colour.</li>
+          <li><b>Black becomes slate.</b> A softer blue-black that sits better next to stone photography.</li>
+          <li><b>Wide, heavy lettering.</b> It reads like site hoarding and signwriting, not like a tech company.</li>
+        </ul>
+      </div>
+      <div class="k-color">
+        <span class="label">Colour</span>
+        <div class="swatches">
+          <div class="sw"><i style="background:#D2561E"></i><b>Kiln orange</b><span>#D2561E · accent only</span></div>
+          <div class="sw"><i style="background:#1D2125"></i><b>Welsh slate</b><span>#1D2125 · text, vans</span></div>
+          <div class="sw"><i style="background:#B59E74"></i><b>Gritstone</b><span>#B59E74 · secondary</span></div>
+          <div class="sw"><i style="background:#5A636A"></i><b>Steel</b><span>#5A636A · small print</span></div>
+          <div class="sw"><i style="background:#EEEEEA"></i><b>Lime mortar</b><span>#EEEEEA · backgrounds</span></div>
+        </div>
+      </div>
+      <div class="k-type">
+        <span class="label">Lettering</span>
+        <div class="spec">
+          <div><span class="label">Headings · Archivo Expanded ExtraBold</span><span class="s1">Roof to cellar</span></div>
+          <div><span class="label">Body · Archivo</span><span class="s2">Plain, readable text for quotes, invoices and the website.</span></div>
+          <div><span class="label">Client words · Newsreader Italic</span><span class="s3">“Reece is undoubtedly a perfectionist.”</span></div>
+          <div><span class="label">Labels · IBM Plex Mono</span><span class="s4">Shell complete · S20 6QF · Rev A</span></div>
+        </div>
+        <p class="form-note">All free Google fonts, so they cost nothing to use on the site, quotes and signage.</p>
+      </div>
+      <div class="k-domain">
+        <span class="label">Domain options</span>
+        <div class="dom-now"><span class="domain-old">rhallandsondevelopments.co.uk</span><p>The current address is 24 characters before the .co.uk, and people can read “rhallandson” as “rhalland son”. It's hard to say over the phone and easy to mistype.</p></div>
+        <ul class="dom-list"><li class="top"><div><b>hallandson.co.uk</b><em>Top pick</em></div><span>Short, says the name, and UK customers trust .co.uk.</span></li><li class=""><div><b>rhallandson.co.uk</b></div><span>Keeps the R to match the company name.</span></li><li class=""><div><b>hallandsonbuild.co.uk</b></div><span>Says what you do. Good on a van.</span></li><li class=""><div><b>hallandsonhomes.co.uk</b></div><span>Suits a new-build focus.</span></li><li class=""><div><b>reecehall.co.uk</b></div><span>Your own name. Useful for a personal email address.</span></li><li class=""><div><b>hallandson.uk</b></div><span>Shortest option. Worth buying next to the .co.uk.</span></li><li class=""><div><b>rhallandson.com</b></div><span>A .com backup, so nobody else can take it.</span></li><li class=""><div><b>hallandson.build</b></div><span>Modern ending, but less familiar to customers.</span></li></ul>
+        <p class="dom-foot"><b>Already taken:</b> hallandson.com, hallandsons.co.uk, hallandsonbuilding.co.uk, halldevelopments.co.uk.<br>Availability checked on 26 Sep 2026. Register the one you want soon, and keep the old domain redirecting to it so existing links and Google rankings carry over.</p>
+      </div>
+      <div class="k-apps">
+        <span class="label">How it looks out in the world</span>
+        <div class="apps">
+          <svg viewBox="0 0 600 260" role="img" aria-label="Van side panel with the new logo, phone number and domain">
+            <rect width="600" height="260" fill="#E4E3DD"/>
+            <path d="M40 60h360l110 60 50 12v78H40z" fill="#1D2125"/>
+            <path d="M420 72l80 46h-80z" fill="#3A4249"/>
+            <rect x="40" y="190" width="520" height="8" fill="#D2561E"/>
+            <circle cx="140" cy="212" r="30" fill="#15181B"/><circle cx="140" cy="212" r="12" fill="#5A636A"/>
+            <circle cx="460" cy="212" r="30" fill="#15181B"/><circle cx="460" cy="212" r="12" fill="#5A636A"/>
+            <use href="#mark" x="70" y="86" width="64" height="64" style="color:#EC7038"/>
+            <text x="150" y="118" fill="#EEEEEA" font-family="Archivo, Arial Black, sans-serif" font-weight="800" font-size="30" font-stretch="125%" style="font-stretch:125%">R HALL &amp; SON</text>
+            <text x="151" y="142" fill="#B59E74" font-family="IBM Plex Mono, monospace" font-size="12" letter-spacing="2">NEW BUILDS · EXTENSIONS · RENOVATIONS</text>
+            <text x="70" y="178" fill="#EEEEEA" font-family="Archivo, Arial, sans-serif" font-weight="700" font-size="20">07837 925696 · hallandson.co.uk</text>
+          </svg>
+          <svg viewBox="0 0 360 260" role="img" aria-label="Site board with the new logo on a fence">
+            <rect width="360" height="260" fill="#E4E3DD"/>
+            <rect x="0" y="200" width="360" height="60" fill="#B59E74"/>
+            <rect x="60" y="40" width="10" height="200" fill="#5A636A"/><rect x="290" y="40" width="10" height="200" fill="#5A636A"/>
+            <rect x="40" y="30" width="280" height="160" fill="#D2561E"/>
+            <use href="#mark" x="64" y="52" width="54" height="54" style="color:#fff"/>
+            <text x="64" y="138" fill="#fff" font-family="Archivo, Arial Black, sans-serif" font-weight="800" font-size="26" style="font-stretch:125%">R HALL &amp; SON</text>
+            <text x="64" y="158" fill="#fff" font-family="IBM Plex Mono, monospace" font-size="11" letter-spacing="1.5" opacity=".85">ANOTHER HOME, BUILT RIGHT</text>
+            <text x="64" y="178" fill="#1D2125" font-family="Archivo, Arial, sans-serif" font-weight="700" font-size="15">07837 925696</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <div class="lb-top"><span class="mono" id="lbCap"></span><button type="button" id="lbClose">Close ✕</button></div>
+  <figure><img id="lbImg" alt=""></figure>
+  <div class="lb-bot"><button type="button" id="lbPrev">← Prev</button><span class="mono" id="lbCount" style="color:#A3A9AD;align-self:center"></span><button type="button" id="lbNext">Next →</button></div>
+</div>
+
+<script>
+const PHOTOS = [{"id":"hero","tags":["newbuild"],"cap":"Stone new build, finished shell","alt":"Detached stone new build with slate roof and large glazed gable under blue sky","w":1600,"h":1200},{"id":"render","tags":["newbuild"],"cap":"Planning visual","alt":"Architect visual of a two-storey stone house with glazed gables","w":1334,"h":750},{"id":"built","tags":["newbuild"],"cap":"The same house, built","alt":"The finished stone house matching the planning visual, in winter","w":1600,"h":1200},{"id":"kitchen-open","tags":["newbuild","kitchens","interiors"],"cap":"Open-plan kitchen with roof lanterns","alt":"Large open-plan kitchen with gloss floor tiles and roof lanterns","w":1800,"h":996},{"id":"dining","tags":["newbuild","interiors"],"cap":"Dining space opening to the garden","alt":"Long dining room with glazed walls onto the garden","w":1800,"h":990},{"id":"kitchen-grey","tags":["kitchens","interiors"],"cap":"Shaker kitchen with island","alt":"Grey shaker kitchen with oak-topped island and pendant lights","w":1600,"h":1200},{"id":"kitchen-stools","tags":["kitchens","interiors"],"cap":"Kitchen island and bi-folds","alt":"Kitchen island with bar stools facing bi-fold doors","w":1200,"h":1600},{"id":"media-white","tags":["interiors"],"cap":"Media wall with inset fire","alt":"White media wall with inset TV and electric fire","w":1200,"h":1600},{"id":"media-grey","tags":["interiors"],"cap":"Fitted media wall and storage","alt":"Grey fitted media wall with tall cupboards","w":1600,"h":1200},{"id":"lantern","tags":["roofing","interiors"],"cap":"Roof lantern with LED surround","alt":"Roof lantern seen from below with lit surround","w":1200,"h":1600},{"id":"bath-marble","tags":["bathrooms"],"cap":"Marble-effect wet room","alt":"Marble-effect tiled bathroom with niche","w":1200,"h":1600},{"id":"bath-tub","tags":["bathrooms"],"cap":"Freestanding bath","alt":"Freestanding white bath in a grey tiled bathroom","w":1200,"h":1600},{"id":"shower","tags":["bathrooms"],"cap":"Walk-in shower under the eaves","alt":"Glass shower enclosure under a sloping ceiling","w":1200,"h":1600},{"id":"stairs","tags":["interiors","renovations"],"cap":"Oak stairs and herringbone floor","alt":"Oak staircase and herringbone wood floor","w":1200,"h":1600},{"id":"herringbone","tags":["interiors","renovations"],"cap":"Herringbone floor going down","alt":"Herringbone parquet being laid in a room with glazed doors","w":1200,"h":1600},{"id":"gable-window","tags":["newbuild","interiors"],"cap":"Full-height gable window","alt":"Pointed gable window looking out over the valley","w":1200,"h":1600},{"id":"estate","tags":["newbuild"],"cap":"Large stone new build","alt":"Large stone house with gravel drive and cars","w":1800,"h":996},{"id":"estate-aerial","tags":["newbuild","outdoor"],"cap":"New build from above","alt":"Aerial view of a large stone house and drive","w":1800,"h":1009},{"id":"estate-pond","tags":["newbuild","outdoor"],"cap":"Rear terrace and pond","alt":"Rear of a stone house with terrace and pond","w":1800,"h":993},{"id":"estate-lanterns","tags":["newbuild","roofing"],"cap":"Flat roof with lantern skylights","alt":"Flat roof with three lantern skylights","w":1800,"h":987},{"id":"drive-house","tags":["newbuild","outdoor"],"cap":"Block-paved drive","alt":"Stone house with new block-paved drive","w":1600,"h":1200},{"id":"drive-night","tags":["outdoor"],"cap":"Drive lighting at dusk","alt":"Block-paved drive with low lighting at dusk","w":1200,"h":1600},{"id":"patio-stone","tags":["outdoor"],"cap":"Indian stone patio and wall","alt":"Indian stone patio with stone-capped wall","w":1600,"h":1200},{"id":"newbuild-2","tags":["newbuild","outdoor"],"cap":"Stone new build with terrace","alt":"Stone house with raised terrace and steps","w":1600,"h":920},{"id":"newbuild-3","tags":["newbuild"],"cap":"New build above the valley","alt":"Stone house on a hillside behind rockery","w":1200,"h":1600},{"id":"planter","tags":["outdoor"],"cap":"Stone planter on the turning circle","alt":"Circular stone planter on a gravel drive","w":1024,"h":768},{"id":"office","tags":["outdoor"],"cap":"Garden office","alt":"Dark clad garden office with glazed doors","w":1600,"h":1200},{"id":"grass","tags":["outdoor"],"cap":"Artificial lawn and fencing","alt":"Artificial lawn with new fence","w":1200,"h":1600},{"id":"patio-slabs","tags":["outdoor"],"cap":"Sandstone patio","alt":"Sandstone patio laid on a lawn","w":1334,"h":750},{"id":"porch","tags":["renovations","outdoor"],"cap":"Oak porch going up","alt":"Oak-framed porch under construction","w":1200,"h":1600},{"id":"site-newbuild","tags":["newbuild","site"],"cap":"Roof going on","alt":"Scaffolded new build with roof trusses","w":1600,"h":1200},{"id":"site-rafters","tags":["roofing","site"],"cap":"Cut roof, hand-framed","alt":"Hand-cut timber roof frame","w":1600,"h":1200},{"id":"site-hip","tags":["roofing","site"],"cap":"Hipped roof frame","alt":"Timber hipped roof frame","w":1200,"h":1600},{"id":"site-steels","tags":["renovations","site"],"cap":"Steels in, props holding","alt":"Steel beams on props during a structural renovation","w":1600,"h":1200},{"id":"site-stripped","tags":["renovations","site"],"cap":"Stripped back to structure","alt":"Interior stripped back with props and skylights","w":1600,"h":1200},{"id":"site-ufh","tags":["renovations","site"],"cap":"Underfloor heating laid","alt":"Underfloor heating pipework laid across a floor","w":1200,"h":1600},{"id":"site-scaffold","tags":["renovations","site"],"cap":"Full renovation under scaffold","alt":"House under scaffold for a full renovation","w":1600,"h":1200},{"id":"dormer","tags":["roofing","renovations"],"cap":"Dormer clad and glazed","alt":"New dormer with dark cladding","w":1200,"h":1600},{"id":"ridge","tags":["roofing"],"cap":"Hip and ridge tiles","alt":"Close-up of clay hip tiles meeting the ridge","w":1200,"h":1600},{"id":"retaining","tags":["outdoor","site"],"cap":"Retaining wall, rendered","alt":"Concrete retaining wall with stone facing","w":1600,"h":1200},{"id":"extension","tags":["renovations","site"],"cap":"Extension roof trusses","alt":"Extension with roof trusses on a street","w":1200,"h":1600},{"id":"van","tags":["renovations","site"],"cap":"Two-storey extension, roof on","alt":"House with new roof structure and works van","w":1200,"h":1600},{"id":"insulation","tags":["roofing","site"],"cap":"Insulated roof, pre-board","alt":"Rafters with foil insulation boards","w":1200,"h":1600},{"id":"bay","tags":["renovations","interiors"],"cap":"Plastered bay with French doors","alt":"Freshly plastered room with French doors","w":1600,"h":1200}];
+const byId = Object.fromEntries(PHOTOS.map(p => [p.id, p]));
+
+/* Services */
+const SERVICES = [
+  {t:"New builds", d:"Detached homes in coursed stone and slate, built from the ground up. Plots, knock-down and rebuilds, and self-builds.", img:"estate", cap:"Large stone new build"},
+  {t:"Extensions & full renovations", d:"Roof off, walls out, steels in. Kitchen extensions, loft bedrooms with en-suites, and whole-house refurbishments.", img:"site-scaffold", cap:"Full renovation under scaffold"},
+  {t:"Roofs, dormers & lanterns", d:"Hand-cut roofs, new dormers, slate and tile, flat roofs with roof lanterns to bring light into open-plan spaces.", img:"estate-lanterns", cap:"Flat roof with lantern skylights"},
+  {t:"Kitchens & living spaces", d:"Open-plan kitchens, islands, bi-folds and media walls, fitted as part of the build so everything lines up.", img:"kitchen-grey", cap:"Shaker kitchen with island"},
+  {t:"Bathrooms & en-suites", d:"Freestanding baths, walk-in showers and fully tiled wet rooms, including awkward rooms under the eaves.", img:"bath-marble", cap:"Marble-effect wet room"},
+  {t:"Drives, patios & garden rooms", d:"Block-paved drives, Indian stone patios, retaining walls, garden offices and lawns.", img:"drive-night", cap:"Block-paved drive lighting at dusk"},
+];
+const svcList = document.getElementById('svcList'), svcImg = document.getElementById('svcImg'), svcCap = document.getElementById('svcCap');
+SERVICES.forEach((s,i) => {
+  const li = document.createElement('li');
+  li.innerHTML = `<button type="button" aria-expanded="false"><h3>${s.t}</h3><span class="plus">${String(i+1).padStart(2,'0')}</span><p class="sub">${s.d}</p><img class="inline-img" src="img/${s.img}-s.jpg" alt="${byId[s.img].alt}" loading="lazy"></button>`;
+  const b = li.querySelector('button');
+  const pick = () => setSvc(i);
+  b.addEventListener('click', pick);
+  b.addEventListener('mouseenter', () => { if (matchMedia('(hover:hover) and (min-width:821px)').matches) pick(); });
+  svcList.appendChild(li);
+});
+function setSvc(i){
+  [...svcList.children].forEach((li,j) => { li.classList.toggle('on', j===i); li.querySelector('button').setAttribute('aria-expanded', j===i); });
+  const s = SERVICES[i];
+  svcImg.src = `img/${s.img}.jpg`; svcImg.alt = byId[s.img].alt; svcCap.textContent = s.cap;
+}
+setSvc(0);
+
+/* Gallery */
+const FILTERS = [["all","All"],["newbuild","New builds"],["renovations","Renovations"],["kitchens","Kitchens"],["bathrooms","Bathrooms"],["roofing","Roofing"],["outdoor","Outside"],["interiors","Interiors"],["site","On site"]];
+const GALLERY = PHOTOS.filter(p => !['hero','render','built'].includes(p.id));
+const chips = document.getElementById('chips'), grid = document.getElementById('grid');
+let current = 'all', visible = [];
+FILTERS.forEach(([k,label]) => {
+  const n = k==='all' ? GALLERY.length : GALLERY.filter(p => p.tags.includes(k)).length;
+  const b = document.createElement('button');
+  b.type='button'; b.className='chip'; b.dataset.k=k; b.setAttribute('aria-pressed', k===current);
+  b.innerHTML = `${label}<small>${n}</small>`;
+  b.onclick = () => { current = k; [...chips.children].forEach(c => c.setAttribute('aria-pressed', c.dataset.k===k)); renderGrid(); };
+  chips.appendChild(b);
+});
+function renderGrid(){
+  visible = current==='all' ? GALLERY : GALLERY.filter(p => p.tags.includes(current));
+  grid.innerHTML = visible.map((p,i) => {
+    const h = Math.round(720 * p.h / p.w), w = 720;
+    return `<button type="button" data-i="${i}" aria-label="Open photo: ${p.cap}"><img src="img/${p.id}-s.jpg" width="${w}" height="${h}" alt="${p.alt}" loading="lazy"><span class="cap">${p.cap}</span></button>`;
+  }).join('');
+}
+grid.addEventListener('click', e => { const b = e.target.closest('button[data-i]'); if (b) openLb(+b.dataset.i, b); });
+renderGrid();
+
+/* Lightbox */
+const lb = document.getElementById('lb'), lbImg = document.getElementById('lbImg'), lbCap = document.getElementById('lbCap'), lbCount = document.getElementById('lbCount');
+let lbI = 0, lastFocus = null;
+function showLb(){ const p = visible[lbI]; lbImg.src = `img/${p.id}.jpg`; lbImg.alt = p.alt; lbCap.textContent = p.cap; lbCount.textContent = `${lbI+1} / ${visible.length}`; }
+function openLb(i, from){ lbI = i; lastFocus = from; showLb(); lb.hidden = false; document.body.style.overflow='hidden'; document.getElementById('lbClose').focus(); }
+function closeLb(){ lb.hidden = true; document.body.style.overflow=''; lastFocus && lastFocus.focus(); }
+const step = d => { lbI = (lbI + d + visible.length) % visible.length; showLb(); };
+document.getElementById('lbClose').onclick = closeLb;
+document.getElementById('lbPrev').onclick = () => step(-1);
+document.getElementById('lbNext').onclick = () => step(1);
+lb.addEventListener('click', e => { if (e.target === lb || e.target.tagName === 'FIGURE') closeLb(); });
+document.addEventListener('keydown', e => { if (lb.hidden) return; if (e.key==='Escape') closeLb(); if (e.key==='ArrowLeft') step(-1); if (e.key==='ArrowRight') step(1); });
+let tx = null;
+lb.addEventListener('touchstart', e => tx = e.touches[0].clientX, {passive:true});
+lb.addEventListener('touchend', e => { if (tx==null) return; const dx = e.changedTouches[0].clientX - tx; if (Math.abs(dx) > 50) step(dx < 0 ? 1 : -1); tx = null; });
+
+/* Copy buttons */
+document.querySelectorAll('.copy').forEach(b => b.addEventListener('click', () => {
+  const el = document.getElementById(b.dataset.copy), txt = el.textContent.trim(), orig = b.textContent;
+  const done = () => { b.textContent = 'Copied'; setTimeout(() => b.textContent = orig, 1600); };
+  const fallback = () => { const r = document.createRange(); r.selectNodeContents(el); const s = getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = 'Selected, press Ctrl+C'; setTimeout(() => b.textContent = orig, 2400); };
+  try { navigator.clipboard.writeText(txt).then(done, fallback); } catch { fallback(); }
+}));
+
+/* Quote form: preview only */
+document.getElementById('quote').addEventListener('submit', e => {
+  e.preventDefault();
+  const f = e.target, sent = document.getElementById('sent');
+  const name = f.name.value.trim(), phone = f.phone.value.trim();
+  if (!name || !phone) {
+    sent.hidden = false;
+    sent.textContent = 'Add your name and a phone number so Reece can get back to you.';
+    (!name ? f.name : f.phone).focus();
+    return;
+  }
+  sent.hidden = false;
+  sent.textContent = `Thanks ${name.split(' ')[0]}. This is a design preview, so nothing was sent. On the live site this enquiry goes straight to Reece's inbox.`;
+});
+</script>
+
+</body>
+</html>
