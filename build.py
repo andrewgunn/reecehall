@@ -23,11 +23,16 @@ src = src.replace(
     "They don’t believe in the word ‘can’t’ and go about everything with enormous professionalism and efficiency.”",
 )
 
-vids = '<div class="vids"><div class="vids-head"><h3>Walk-throughs</h3><span class="mono" style="color:#A3A9AD">Tap to play · no sound</span></div>'
-for f, title, dur in VIDEOS:
-    vids += (f'<figure><video src="vid/{f}-720.mp4" poster="vid/{f}.jpg" controls muted playsinline preload="none" '
-             f'aria-label="Video walk-through: {title}"></video><figcaption><b>{title}</b><span>{dur}</span></figcaption></figure>')
-vids += "</div>"
+f0, t0, d0 = VIDEOS[0]
+vids = (f'<div class="film"><div class="stage" id="stage"><video src="vid/{f0}-720.mp4" poster="vid/{f0}.jpg" muted playsinline preload="none" '
+        f'aria-label="Video walk-through: {t0}"></video><button type="button" class="stage-play" aria-label="Play walk-through">'
+        f'<span class="ring"><svg><use href="#i-play"/></svg></span><span class="mono">Now showing · <span class="dur">{d0}</span></span><h3>{t0}</h3></button></div>'
+        '<ol class="reel" id="reel">')
+for i, (f, title, dur) in enumerate(VIDEOS):
+    vids += (f'<li><button type="button" data-f="{f}" data-t="{title}" data-d="{dur}" aria-current="{str(i == 0).lower()}">'
+             f'<span class="th"><img src="vid/{f}.jpg" alt="" loading="lazy"></span>'
+             f'<span class="tx"><b>{title}</b><span>{i + 1:02d} · {dur}</span></span></button></li>')
+vids += '</ol></div><p class="film-note mono">No sound · tap any film to play</p>'
 
 body = src.replace("__PHOTOS__", json.dumps(photos, separators=(",", ":"))).replace("__VIDEOS__", vids)
 assert "__PHOTOS__" not in body and "__VIDEOS__" not in body
