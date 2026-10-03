@@ -47,7 +47,7 @@ standalone = f"""<!doctype html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="R Hall &amp; Son: family-run builders in Sheffield. New builds, extensions and full renovations, roof to cellar.">
+<meta name="description" content="R Hall &amp; Son: family-run builders in Sheffield. Award-winning: Building Renovations Service of the Year, Yorkshire Prestige Awards 2026/27. New builds, extensions and full renovations, roof to cellar.">
 <meta property="og:title" content="R Hall &amp; Son · Sheffield builders">
 <meta property="og:description" content="New builds, extensions and full renovations across Sheffield.">
 <meta property="og:image" content="img/hero.jpg">

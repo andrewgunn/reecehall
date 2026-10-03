@@ -122,6 +122,12 @@ nav.links a:hover{opacity:1;color:var(--kiln-ink)}
 .js .hero h1 .ln>span{animation:rise 1.1s var(--ease) both;animation-delay:calc(.15s + var(--i,0) * .1s)}
 .js .hero .tag,.js .hero-copy p,.js .hero .ctas,.js .hero-bar{animation:fade-up .9s cubic-bezier(.2,.7,.2,1) both}
 .js .hero .tag{animation-delay:.05s}
+.award-pill{justify-self:start;display:inline-flex;align-items:center;gap:12px;padding:8px 16px 8px 8px;background:rgba(15,17,19,.55);border:1px solid rgba(244,100,37,.7);color:#F4F2EC;text-decoration:none;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);transition:background .15s,border-color .15s}
+.award-pill:hover{background:rgba(244,100,37,.22);border-color:#F46425}
+.award-pill .medal{flex:none;width:34px;height:34px;display:grid;place-items:center;background:#F46425;color:#15181B;font:800 15px/1 var(--display)}
+.award-pill b{display:block;font:700 14px/1.15 var(--body);font-stretch:108%;text-transform:uppercase;letter-spacing:.02em}
+.award-pill small{display:block;font:500 11px/1.3 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:#E9DFC9;margin-top:3px}
+.js .award-pill{animation:fade-up .9s cubic-bezier(.2,.7,.2,1) both}
 .js .hero-copy p{animation-delay:.55s}
 .js .hero .ctas{animation-delay:.68s}
 .js .hero-bar{animation-delay:.85s}
@@ -253,6 +259,26 @@ section{padding-block:clamp(64px,9vw,120px)}
 .lb button{all:unset;cursor:pointer;color:#fff;border:1px solid rgba(255,255,255,.3);padding:10px 16px;font:500 13px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase}
 .lb button:hover{border-color:#fff}
 .lb button:focus-visible{outline:2px solid #F46425}
+
+/* Award */
+.award{background:var(--kiln);color:#15181B;position:relative;overflow:hidden}
+.award::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(120deg, transparent 0 46px, rgba(0,0,0,.035) 46px 92px);pointer-events:none}
+.award-grid{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(32px,5vw,72px);align-items:center}
+.award-copy{display:grid;gap:22px;align-content:start}
+.award .kicker{font-weight:500}
+.award h2{font-size:clamp(34px,3.9vw,56px);line-height:.92}
+.award-grid>*{min-width:0}
+.award h2 small{display:block;font-size:.42em;line-height:1.1;margin-bottom:.35em;letter-spacing:.02em}
+.award blockquote{margin:0;font:italic 400 clamp(21px,2.1vw,27px)/1.3 var(--serif);max-width:32ch;border-left:3px solid #15181B;padding-left:20px}
+.award blockquote cite{display:block;margin-top:10px;font:500 12px/1.4 var(--mono);font-style:normal;letter-spacing:.08em;text-transform:uppercase}
+.award-copy>p{max-width:52ch;font-size:17px}
+.award .ctas{display:flex;gap:12px;flex-wrap:wrap}
+.award .btn-dark{background:#15181B;color:#F4F2EC}
+.award .btn-dark:hover{background:#2A3035}
+.award .btn-line{color:#15181B}
+.award-cert{margin:0;background:#fff;padding:clamp(8px,1vw,12px);box-shadow:0 40px 80px -30px rgba(40,12,0,.55);transform:rotate(1.2deg)}
+.award-cert img{width:100%;height:auto}
+@media (max-width:860px){.award-grid{grid-template-columns:1fr}.award h2{font-size:clamp(30px,8vw,52px)}.award-cert{transform:none;order:-1}}
 
 /* Walk-through films */
 .films{background:#101315;color:#ECEAE4;--muted:#A3A9AD;position:relative;overflow:hidden}
@@ -432,6 +458,7 @@ footer.site .wrap{display:flex;justify-content:space-between;gap:12px 24px;flex-
       <span><b>R.Hall &amp; Son</b><small>Developments Ltd</small></span>
     </a>
     <nav class="links" aria-label="Main">
+      <a href="#award">Award</a>
       <a href="#work">Our work</a>
       <a href="#films">Walk-throughs</a>
       <a href="#services">Services</a>
@@ -457,6 +484,7 @@ footer.site .wrap{display:flex;justify-content:space-between;gap:12px 24px;flex-
     </div>
     <div class="wrap hero-in">
       <div class="hero-copy">
+        <a class="award-pill" href="#award"><span class="medal" aria-hidden="true">★</span><span><b>Award winner 2026/27</b><small>Building Renovations Service of the Year</small></span></a>
         <div class="tag mono"><span>Family-run builders</span><span>Sheffield</span><span>Est. 2023</span></div>
         <h1><span class="ln"><span style="--i:0">Built right,</span></span> <span class="ln"><span style="--i:1"><em>roof</em> to</span></span> <span class="ln"><span style="--i:2">cellar.</span></span></h1>
         <p>New builds, extensions and full renovations across Sheffield. Every job is run by Reece, from the first site visit to the day you get the keys.</p>
@@ -485,6 +513,22 @@ footer.site .wrap{display:flex;justify-content:space-between;gap:12px 24px;flex-
       <div><b>Roof to cellar</b><span>Structure, roofing, kitchens, bathrooms, outside</span></div>
     </div>
   </div>
+
+  <section class="award" id="award">
+    <div class="wrap award-grid">
+      <div class="award-copy">
+        <span class="mono kicker">Yorkshire Prestige Awards · 2026/27 winner</span>
+        <h2><small>Award-winning builders</small>Building Renovations Service of the Year.</h2>
+        <blockquote>“The balance of craftsmanship, innovation and customer focus sets R.&nbsp;Hall &amp; Son Developments Ltd apart in the building and renovation industry.”<cite>The judges · Prestige Awards</cite></blockquote>
+        <p>The judges singled out how we combine a personal service with consistently high standards across every kind of job, keeping clients involved throughout with clear communication, realistic budgets and honest timescales. Not bad for a family firm that started in 2023.</p>
+        <div class="ctas">
+          <a class="btn btn-dark" href="#contact">Work with us <svg><use href="#i-arrow"/></svg></a>
+          <a class="btn btn-line" href="award.pdf" target="_blank" rel="noopener">Read the write-up (PDF)</a>
+        </div>
+      </div>
+      <figure class="award-cert"><img src="img/award.jpg" width="1600" height="818" alt="Yorkshire Prestige Awards: R.Hall &amp; Son Developments Ltd, 2026/27 winner, Building Renovations Service of the Year" loading="lazy"></figure>
+    </div>
+  </section>
 
   <section class="films" id="films">
     <div class="wrap">
@@ -611,6 +655,7 @@ footer.site .wrap{display:flex;justify-content:space-between;gap:12px 24px;flex-
           <div><dt class="mono">Established</dt><dd>August 2023</dd></div>
           <div><dt class="mono">Based</dt><dd>Owlthorpe, Sheffield S20</dd></div>
           <div><dt class="mono">Working</dt><dd>Sheffield &amp; surrounding area</dd></div>
+          <div style="grid-column:1/-1;padding-right:0"><dt class="mono">Award</dt><dd>Building Renovations Service of the Year, Yorkshire Prestige Awards 2026/27</dd></div>
         </dl>
       </div>
     </div>
@@ -654,7 +699,7 @@ footer.site .wrap{display:flex;justify-content:space-between;gap:12px 24px;flex-
 
 <footer class="site">
   <div class="wrap">
-    <span>© 2026 R.Hall &amp; Son Developments Ltd · Sheffield</span>
+    <span>© 2026 R.Hall &amp; Son Developments Ltd · Sheffield · Yorkshire Prestige Awards 2026/27 winner</span>
     <span>New builds · Extensions · Renovations · Roofing · Kitchens · Bathrooms</span>
   </div>
 </footer>
@@ -847,7 +892,7 @@ const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 /* Scroll reveal, for anything that starts below the fold */
 if (!reduceMotion && 'IntersectionObserver' in window) {
   const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), {rootMargin:'0px 0px -8% 0px'});
-  document.querySelectorAll('.proof .wrap>div, main section:not(.hero) .head, .d2r figure, .d2r-notes>div, .svc, .steps li, .chips, .film, .rev, .about-grid>*, .contact .tb').forEach(el => {
+  document.querySelectorAll('.proof .wrap>div, main section:not(.hero) .head, .d2r figure, .d2r-notes>div, .svc, .steps li, .chips, .award-copy, .award-cert, .film, .rev, .about-grid>*, .contact .tb').forEach(el => {
     if (el.getBoundingClientRect().top < innerHeight) return;
     const sib = [...el.parentElement.children].filter(c => c.matches(el.tagName)).indexOf(el);
     el.style.setProperty('--d', `${Math.min(sib, 5) * 0.08}s`);
